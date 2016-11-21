@@ -80,15 +80,16 @@ public class ForecastFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         listView = (ListView) rootView.findViewById(R.id.listview_forecast);
 
-        String[] fakeData = {"Today - Sunny - 86 / 63",
+/*        String[] fakeData = {"Today - Sunny - 86 / 63",
                 "Tomorrow - Sunny - 85 / 61",
                 "Friday - Cloudy - 86 / 63",
                 "Saturday - Cloudy - 76 / 59",
                 "Sunday - Cloudy - 76 / 59",
                 "Monday - Cloudy - 76 / 59"};
 
-        List<String> weekForecast = new ArrayList<>(Arrays.asList(fakeData));
+        List<String> weekForecast = new ArrayList<>(Arrays.asList(fakeData));*/
 
+        List<String> weekForecast = new ArrayList<>();
 
         //31.757358,35.211340 lat long of Jerusalem
         FetchWeatherTask WeatherTask = new FetchWeatherTask();
@@ -105,9 +106,9 @@ public class ForecastFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 String forecast = mForecastAdapter.getItem(position);
-                String toastMessage = "Clicked item: " + ++position ;
+               /* String toastMessage = "Clicked item: " + ++position ;
                 Toast.makeText(ForecastFragment.this.getActivity(), toastMessage + ". Forecast: " +forecast,
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_SHORT).show();*/
                 Intent detailIntent = new Intent(ForecastFragment.this.getActivity(), DetailActivity.class);
                 detailIntent.putExtra(Intent.EXTRA_TEXT, forecast);
                 startActivity(detailIntent);

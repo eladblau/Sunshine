@@ -1,5 +1,6 @@
 package com.example.eladblau.sunshine;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -50,7 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+
+            Intent settingIntent = new Intent(MainActivity.this, SettingActivity.class);
+            startActivity(settingIntent);
+            //return true;
         }
 
         return super.onOptionsItemSelected(item);
