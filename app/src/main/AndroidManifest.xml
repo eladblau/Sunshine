@@ -24,6 +24,9 @@
                 android:value="com.example.eladblau.sunshine.MainActivity" />
         </activity>
         <activity android:name=".SettingActivity"></activity>
+        <provider
+            android:authorities="com.example.eladblau.sunshine"
+            android:name=".data.WeatherProvider" />
     </application>
 
 </manifest>
